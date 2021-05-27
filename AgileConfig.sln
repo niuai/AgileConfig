@@ -33,7 +33,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgileConfig.Server.Data.Fre
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgileConfig.Server.ServiceTests", "AgileConfig.Server.ServiceTests\AgileConfig.Server.ServiceTests.csproj", "{8CE2DB53-3A35-4991-A419-0EC12B001F59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileConfig.Server.CommonTests", "AgileConfig.Server.CommonTests\AgileConfig.Server.CommonTests.csproj", "{70724B0E-7D81-412C-BDA7-747F4845E990}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgileConfig.Server.CommonTests", "AgileConfig.Server.CommonTests\AgileConfig.Server.CommonTests.csproj", "{70724B0E-7D81-412C-BDA7-747F4845E990}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{13AD9374-2AD0-4713-8D0D-1683B1845E2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileConfig.Sample", "Sample\AgileConfig.Sample\AgileConfig.Sample.csproj", "{F74D6BB8-7069-4488-AD14-7BB7A8F0AAA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +85,10 @@ Global
 		{70724B0E-7D81-412C-BDA7-747F4845E990}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70724B0E-7D81-412C-BDA7-747F4845E990}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70724B0E-7D81-412C-BDA7-747F4845E990}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F74D6BB8-7069-4488-AD14-7BB7A8F0AAA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F74D6BB8-7069-4488-AD14-7BB7A8F0AAA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F74D6BB8-7069-4488-AD14-7BB7A8F0AAA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F74D6BB8-7069-4488-AD14-7BB7A8F0AAA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,6 +104,7 @@ Global
 		{1EBE3129-A926-497A-801E-FDC29F998272} = {1D2FD643-CB85-40F9-BC8A-CE4A39E9F43E}
 		{8CE2DB53-3A35-4991-A419-0EC12B001F59} = {F277EC27-8C0E-4490-9645-F5F3244F9246}
 		{70724B0E-7D81-412C-BDA7-747F4845E990} = {F277EC27-8C0E-4490-9645-F5F3244F9246}
+		{F74D6BB8-7069-4488-AD14-7BB7A8F0AAA4} = {13AD9374-2AD0-4713-8D0D-1683B1845E2E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7F10DB58-5B6F-4EAC-994F-14E8046B306F}

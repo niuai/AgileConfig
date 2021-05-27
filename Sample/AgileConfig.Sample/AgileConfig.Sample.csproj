@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="nlog.config" />
+    <Content Remove="wwwroot\favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\AgileConfig.Server.Apisite\AgileConfig.Server.Apisite.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\ui\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="nlog.config" />
+    <None Include="wwwroot\favicon.ico" />
+  </ItemGroup>
+
+
+</Project>
