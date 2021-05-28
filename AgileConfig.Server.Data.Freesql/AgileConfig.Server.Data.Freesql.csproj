@@ -15,8 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AgileConfig.Server.Common\AgileConfig.Server.Common.csproj" />
-    <ProjectReference Include="..\AgileConfig.Server.Data.Entity\AgileConfig.Server.Data.Entity.csproj" />
+    <ProjectReference Include="..\AgileConfig.Server.Common\AgileConfig.Server.Common.csproj">
+    </ProjectReference>
+    <ProjectReference Include="..\AgileConfig.Server.Data.Entity\AgileConfig.Server.Data.Entity.csproj">
+    </ProjectReference>
   </ItemGroup>
 
 </Project>

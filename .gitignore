@@ -259,6 +259,8 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+*.db
+
 /AgileConfig.Server.Apisite/agile_config.db
 /AgileConfig.Server.Apisite/logs/internal-nlog.txt
 /AgileConfig.Server.Apisite/Properties/PublishProfiles/FolderProfile.pubxml

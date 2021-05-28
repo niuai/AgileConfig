@@ -9,9 +9,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AgileConfig.Server.Common\AgileConfig.Server.Common.csproj" />
-    <ProjectReference Include="..\AgileConfig.Server.Data.Freesql\AgileConfig.Server.Data.Freesql.csproj" />
-    <ProjectReference Include="..\AgileConfig.Server.IService\AgileConfig.Server.IService.csproj" />
+    <ProjectReference Include="..\AgileConfig.Server.Common\AgileConfig.Server.Common.csproj">
+    </ProjectReference>
+    <ProjectReference Include="..\AgileConfig.Server.Data.Freesql\AgileConfig.Server.Data.Freesql.csproj">
+    </ProjectReference>
+    <ProjectReference Include="..\AgileConfig.Server.IService\AgileConfig.Server.IService.csproj">
+    </ProjectReference>
   </ItemGroup>
 
 </Project>

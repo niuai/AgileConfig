@@ -4,10 +4,32 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <PackageId>AgileConfig.Server</PackageId>
+    <Version>1.0.4</Version>
+    <Authors>NIUAI</Authors>
+    <Company>NIUAI</Company>
+    <CopyLocalLockFileAssemblies>CopyPackagesue</CopyLocalLockFileAssemblies>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
+  </PropertyGroup>
+  <Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
+    <ItemGroup>
+      <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" />
+    </ItemGroup>
+  </Target>
 
   <ItemGroup>
     <None Remove="agile_config.db" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\**">
+      <Pack>true</Pack>
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+      <PackagePath>contentFiles\any\any\wwwroot\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -17,13 +39,43 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
     <PackageReference Include="NLog" Version="4.6.8" />
     <PackageReference Include="NLog.Web.AspNetCore" Version="4.9.0" />
+    
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.1" />
+    <PackageReference Include="MySql.Data" Version="8.0.21" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.113.1" />
+    <PackageReference Include="FreeSql" Version="1.8.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />
+    <PackageReference Include="FreeSql.DbContext" Version="1.8.1" />
+    <PackageReference Include="FreeSql.Provider.MySql" Version="1.8.1" />
+    <PackageReference Include="FreeSql.Provider.Oracle" Version="1.8.1" />
+    <PackageReference Include="FreeSql.Provider.PostgreSQL" Version="1.8.1" />
+    <PackageReference Include="FreeSql.Provider.Sqlite" Version="1.8.1" />
+    <PackageReference Include="FreeSql.Provider.SqlServer" Version="1.8.1" />
+    <PackageReference Include="AgileHttp" Version="0.0.6" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Agile.Config.Protocol\Agile.Config.Protocol.csproj" />
-    <ProjectReference Include="..\AgileConfig.Server.Data.Entity\AgileConfig.Server.Data.Entity.csproj" />
-    <ProjectReference Include="..\AgileConfig.Server.Data.Freesql\AgileConfig.Server.Data.Freesql.csproj" />
-    <ProjectReference Include="..\AgileConfig.Server.Service\AgileConfig.Server.Service.csproj" />
+    <ProjectReference Include="..\Agile.Config.Protocol\Agile.Config.Protocol.csproj">
+      <PrivateAssets>all</PrivateAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\AgileConfig.Server.Common\AgileConfig.Server.Common.csproj">
+      <PrivateAssets>all</PrivateAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\AgileConfig.Server.Data.Entity\AgileConfig.Server.Data.Entity.csproj">
+      <PrivateAssets>all</PrivateAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\AgileConfig.Server.Data.Freesql\AgileConfig.Server.Data.Freesql.csproj">
+      <PrivateAssets>all</PrivateAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\AgileConfig.Server.IService\AgileConfig.Server.IService.csproj">
+      <PrivateAssets>all</PrivateAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\AgileConfig.Server.Service\AgileConfig.Server.Service.csproj">
+      <PrivateAssets>all</PrivateAssets>
+    </ProjectReference>
   </ItemGroup>
 
   <ItemGroup>

@@ -10,16 +10,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\AgileConfig.Server.Apisite\AgileConfig.Server.Apisite.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="wwwroot\ui\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="nlog.config" />
     <None Include="wwwroot\favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AgileConfig.Server" Version="1.0.4" />
   </ItemGroup>
 
 
