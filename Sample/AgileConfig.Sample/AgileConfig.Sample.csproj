@@ -7,6 +7,7 @@
   <ItemGroup>
     <Content Remove="nlog.config" />
     <Content Remove="wwwroot\favicon.ico" />
+    <None Remove="*.db" />
   </ItemGroup>
 
   <ItemGroup>
