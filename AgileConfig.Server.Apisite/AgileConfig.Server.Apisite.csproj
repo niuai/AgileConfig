@@ -4,8 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <AssemblyVersion>1.2.0.0</AssemblyVersion>
-    <PackageId>AgileConfig.Server</PackageId>
-    <Version>1.0.5</Version>
+    <PackageId>Niuai.AgileConfig.Server</PackageId>
+    <Version>1.0.1</Version>
     <Authors>NIUAI</Authors>
     <Company>NIUAI</Company>
     <CopyLocalLockFileAssemblies>CopyPackagesue</CopyLocalLockFileAssemblies>
