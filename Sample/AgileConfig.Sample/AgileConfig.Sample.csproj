@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AgileConfig.Server" Version="1.0.5" />
+    <PackageReference Include="Niuai.AgileConfig.Server" Version="1.0.1" />
   </ItemGroup>
 
 

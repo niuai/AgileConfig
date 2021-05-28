@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\AgileConfig.Server.Apisite\AgileConfig.Server.Apisite.csproj" />
     <ProjectReference Include="..\AgileConfig.Server.IService\AgileConfig.Server.IService.csproj" />
+    <ProjectReference Include="..\AgileConfig.Server.Service\AgileConfig.Server.Service.csproj" />
   </ItemGroup>
 
 </Project>
