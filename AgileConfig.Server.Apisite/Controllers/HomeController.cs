@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AgileConfig.Server.Apisite.Controllers
 {
-    [Authorize]
+    [Authorize(Policy = "AgileConfig")]
     public class HomeController : Controller
     {
         private readonly ISettingService _settingService;

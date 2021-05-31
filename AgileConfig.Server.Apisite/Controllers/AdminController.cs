@@ -43,7 +43,7 @@ namespace AgileConfig.Server.Apisite.Controllers
                 {
                     status = "ok",
                     token = jwt,
-                    type = "Bearer",
+                    type = AgileConfigAuthenticationDefaults.AuthenticationScheme,
                     currentAuthority = "admin"
                 });
             }

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AgileConfig.Server.Apisite.Controllers
 {
-    [Authorize]
+    [Authorize(Policy = "AgileConfig")]
     public class SysLogController : Controller
     {
         private readonly ISysLogService _sysLogService;

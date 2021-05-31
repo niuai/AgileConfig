@@ -12,7 +12,7 @@ using AgileConfig.Server.Common;
 
 namespace AgileConfig.Server.Apisite.Controllers
 {
-    [Authorize]
+    [Authorize(Policy = "AgileConfig")]
     [ModelVaildate]
     public class AppController : Controller
     {
@@ -59,8 +59,8 @@ namespace AgileConfig.Server.Apisite.Controllers
                     Enabled = item.Enabled,
                     UpdateTime = item.UpdateTime,
                     CreateTime = item.CreateTime,
-                    inheritancedApps = item.Type == AppType.Inheritance ? 
-                                                                            new List<string>() : 
+                    inheritancedApps = item.Type == AppType.Inheritance ?
+                                                                            new List<string>() :
                                                                             (inheritancedApps).Select(ia => ia.Id).ToList(),
                     inheritancedAppNames = item.Type == AppType.Inheritance ?
                                                                             new List<string>() :

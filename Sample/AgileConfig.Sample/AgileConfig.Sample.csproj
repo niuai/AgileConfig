@@ -20,7 +20,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Niuai.AgileConfig.Server" Version="1.0.1" />
+    <!--<PackageReference Include="Niuai.AgileConfig.Server" Version="1.0.1" />-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\AgileConfig.Server.Apisite\AgileConfig.Server.Apisite.csproj" />
   </ItemGroup>
 
 

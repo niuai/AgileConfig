@@ -28,8 +28,12 @@ namespace Microsoft.Extensions.DependencyInjection
             Configuration = configuration;
 
             services.AddMemoryCache();
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(options =>
+            services.AddAuthentication(options=>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+                .AddJwtBearer(AgileConfigAuthenticationDefaults.AuthenticationScheme, options =>
                 {
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
@@ -38,6 +42,14 @@ namespace Microsoft.Extensions.DependencyInjection
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtSetting.Instance.SecurityKey)),
                     };
                 });
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AgileConfig", policy =>
+                {
+                    policy.AuthenticationSchemes.Add(AgileConfigAuthenticationDefaults.AuthenticationScheme);
+                    policy.RequireClaim("name");
+                });
+            });
             services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0).AddRazorRuntimeCompilation();
             services.AddFreeSqlDbContext();

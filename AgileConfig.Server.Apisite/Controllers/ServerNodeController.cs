@@ -11,7 +11,7 @@ using AgileConfig.Server.Common;
 
 namespace AgileConfig.Server.Apisite.Controllers
 {
-    [Authorize]
+    [Authorize(Policy = "AgileConfig")]
     [ModelVaildate]
     public class ServerNodeController : Controller
     {

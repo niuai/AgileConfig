@@ -41,10 +41,10 @@ namespace AgileConfig.Server.Apisite
             //创建用户身份标识，可按需要添加更多信息
             var claims = new Claim[]
             {
-    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-    new Claim("id", "admin", ClaimValueTypes.String), // 用户id
-    new Claim("name", "admin"), // 用户名
-    new Claim("admin", true.ToString() ,ClaimValueTypes.Boolean) // 是否是管理员
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim("id", "admin", ClaimValueTypes.String), // 用户id
+                new Claim("name", "admin"), // 用户名
+                new Claim("admin", true.ToString() ,ClaimValueTypes.Boolean) // 是否是管理员
             };
             var key = Encoding.UTF8.GetBytes(JwtSetting.Instance.SecurityKey);
             //创建令牌
@@ -61,5 +61,10 @@ namespace AgileConfig.Server.Apisite
 
             return jwtToken;
         }
+    }
+
+    public class AgileConfigAuthenticationDefaults
+    {
+        public const string AuthenticationScheme = "AgileConfigBearer";
     }
 }

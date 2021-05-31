@@ -72,7 +72,7 @@ const JsonImport : React.FC<JsonImportFormProps> = (props)=>{
         name: 'file',
         action: '/config/PreViewJsonFile',
         headers: {
-          Authorization:  'Bearer ' + getToken(),
+          Authorization:  'AgileConfigBearer ' + getToken(),
         },
         onChange(info:any) {
           if (info.file.status !== 'uploading') {

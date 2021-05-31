@@ -15,7 +15,7 @@ using System.Dynamic;
 
 namespace AgileConfig.Server.Apisite.Controllers
 {
-    [Authorize]
+    [Authorize(Policy = "AgileConfig")]
     [ModelVaildate]
     public class ConfigController : Controller
     {

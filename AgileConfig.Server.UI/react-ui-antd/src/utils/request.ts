@@ -52,7 +52,7 @@ const errorHandler = (error: { response: Response }): Response => {
 };
 
 const authHeaderInterceptor = (url: string, options: RequestOptionsInit) => {
-  const authHeader = { Authorization: 'Bearer ' + getToken() };
+  const authHeader = { Authorization: 'AgileConfigBearer ' + getToken() };
   return {
     url: `${url}`,
     options: { ...options, interceptors: true, headers: authHeader },

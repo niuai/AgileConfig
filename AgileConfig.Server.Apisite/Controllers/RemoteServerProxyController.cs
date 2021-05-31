@@ -13,7 +13,7 @@ namespace AgileConfig.Server.Apisite.Controllers
     /// <summary>
     /// 这个Controller是控制台网页跟后台的接口，不要跟RemoteOp那个Controller混淆
     /// </summary>
-    [Authorize]
+    [Authorize(Policy = "AgileConfig")]
     public class RemoteServerProxyController : Controller
     {
         private readonly IRemoteServerNodeProxy _remoteServerNodeProxy;
