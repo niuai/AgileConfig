@@ -5,10 +5,13 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <AssemblyVersion>1.2.0.0</AssemblyVersion>
     <PackageId>Niuai.AgileConfig.Server</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>NIUAI</Authors>
     <Company>NIUAI</Company>
     <CopyLocalLockFileAssemblies>CopyPackagesue</CopyLocalLockFileAssemblies>
+    <Description>
+      GitHub: https://github.com/niuai/AgileConfig. Work with AgileConfig.Client(nuget.org, v1.1.8.5)
+    </Description>
   </PropertyGroup>
 
   <PropertyGroup>

@@ -13,15 +13,19 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
     public static class ServiceCollectionExtensions
     {
+        private static IConfiguration Configuration { get; set; }
+
         public static IServiceCollection AddAgileServer(this IServiceCollection services, IConfiguration configuration, ILoggerFactory loggerFactory)
         {
             Global.LoggerFactory = loggerFactory;
             Global.Config = configuration;
+            Configuration = configuration;
 
             services.AddMemoryCache();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -53,6 +57,11 @@ namespace Microsoft.Extensions.DependencyInjection
                 op.AllowAnyMethod();
                 op.AllowAnyHeader();
             });
+            app.Map(Configuration.GetValue<string>("config_url") ?? "/home/index", a => a.Run(async context =>
+            {
+                context.Response.Redirect("/home/index");
+                await Task.CompletedTask;
+            }));
             app.UseWebSockets(new WebSocketOptions()
             {
                 KeepAliveInterval = TimeSpan.FromSeconds(60),
