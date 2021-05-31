@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using AgileConfig.Server.Apisite.Auth;
 using AgileConfig.Server.Apisite.Models;
 using AgileConfig.Server.Common;
 using AgileConfig.Server.Data.Entity;

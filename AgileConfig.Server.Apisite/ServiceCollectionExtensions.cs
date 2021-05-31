@@ -1,18 +1,15 @@
-﻿using AgileConfig.Server.Apisite;
+﻿using AgileConfig.Server.Apisite.Auth;
 using AgileConfig.Server.Apisite.UIExtension;
 using AgileConfig.Server.Apisite.Websocket;
 using AgileConfig.Server.Common;
 using AgileConfig.Server.Data.Freesql;
 using AgileConfig.Server.IService;
 using AgileConfig.Server.Service;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using Microsoft.IdentityModel.Tokens;
 using System;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Microsoft.Extensions.DependencyInjection
@@ -28,20 +25,8 @@ namespace Microsoft.Extensions.DependencyInjection
             Configuration = configuration;
 
             services.AddMemoryCache();
-            services.AddAuthentication(options=>
-            {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-                .AddJwtBearer(AgileConfigAuthenticationDefaults.AuthenticationScheme, options =>
-                {
-                    options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidIssuer = JwtSetting.Instance.Issuer,
-                        ValidAudience = JwtSetting.Instance.Audience,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtSetting.Instance.SecurityKey)),
-                    };
-                });
+            services.AddAuthentication(AgileConfigAuthenticationDefaults.AuthenticationScheme)
+                .AddScheme<AgileConfigAuthOptions, AgileConfigAuthenticationHandler>(AgileConfigAuthenticationDefaults.AuthenticationScheme, o => { });
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("AgileConfig", policy =>

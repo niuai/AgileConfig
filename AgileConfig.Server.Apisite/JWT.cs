@@ -34,6 +34,7 @@ namespace AgileConfig.Server.Apisite
             get;
         }
     }
+
     public class JWT
     {
         public static string GetToken()
@@ -61,10 +62,5 @@ namespace AgileConfig.Server.Apisite
 
             return jwtToken;
         }
-    }
-
-    public class AgileConfigAuthenticationDefaults
-    {
-        public const string AuthenticationScheme = "AgileConfigBearer";
     }
 }
