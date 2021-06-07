@@ -15,7 +15,7 @@ namespace AgileConfig.Sample.Client
             Host.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration((context, config) =>
                 {
-                    config.AddAgileConfig();
+                    config.AddAgileConfig(new ConfigClient(config.Build()));
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
